@@ -14,9 +14,7 @@ const Main = () => {
         })
     }, [])
 
-    //const title = movie.title;
-    //console.log(movie)
-    // console.log(movie?.title)
+
     const truncateString = (str, num) => {
         if (str?.length > num) {
             return str.slice(0, num) + '...';

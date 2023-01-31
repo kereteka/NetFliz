@@ -18,7 +18,6 @@ export function AuthContextProvider({ children }) {
     setDoc(doc(db, 'users', email), {
       savedShows: [],
     });
-    console.log(doc);
   };
 
   const logIn = (email, password) => {

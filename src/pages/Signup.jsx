@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import {UserAuth} from '../context/AuthContext'
+import { UserAuth } from '../context/AuthContext'
 
 const Signup = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const {user, signUp} = UserAuth()
+  const { user, signUp } = UserAuth()
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
@@ -14,7 +14,7 @@ const Signup = () => {
       await signUp(email, password)
       navigate('/')
     } catch (error) {
-        console.log(error)
+      console.log(error)
     }
   }
 
@@ -28,16 +28,16 @@ const Signup = () => {
             <div className='max-w-[320px] mx-auto py-16'>
               <h1 className='text-3xl font-bold'>Sign Up</h1>
               <form onSubmit={handleSubmit} className='w-full flex flex-col py-4'>
-                <input 
+                <input
                   onChange={(e) => setEmail(e.target.value)}
-                  className='p-3 my-2 bg-gray-700 rounded' 
-                  type="email" placeholder='Email' 
-                  autoComplete='email' 
+                  className='p-3 my-2 bg-gray-700 rounded'
+                  type="email" placeholder='Email'
+                  autoComplete='email'
                 />
                 <input
-                  onChange={(e) => setPassword(e.target.value)} 
-                  className='p-3 my-2 bg-gray-700 rounded' 
-                  type="password" placeholder='Password' 
+                  onChange={(e) => setPassword(e.target.value)}
+                  className='p-3 my-2 bg-gray-700 rounded'
+                  type="password" placeholder='Password'
                   autoCapitalize='current-password'
                 />
                 <button className='bg-red-600 py-3 my-6 rounded font-bold'> Sign Up</button>
